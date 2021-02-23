@@ -1,0 +1,34 @@
+[Rainmeter]
+Update=-1
+Group=FountainOfColors
+ContextTitle="Options..."
+ContextAction=[!ToggleConfig "Fountain of Colors\Options" "visualizer.ini"]
+LeftMouseUpAction=[!ToggleConfig "Fountain of Colors\Options" "visualizer.ini"]
+BackgroundMode=2
+SolidColor=0,0,0,1
+OnRefreshAction=[!WriteKeyValue Variables Angle "#Angle#" "#@#Variables.inc"][!WriteKeyValue Variables Invert "#Invert#" "#@#Variables.inc"][!WriteKeyValue Variables Channel "#Channel#" "#@#Variables.inc"][!WriteKeyValue Variables Port "#Port#" "#@#Variables.inc"][!WriteKeyValue Variables ID "#ID#" "#@#Variables.inc"][!WriteKeyValue Variables Config "#CURRENTCONFIG#" "#@#Variables.inc"][!ActivateConfig "Fountain of Colors\Initialize"]
+
+[Audio]
+Measure=Plugin
+Plugin=AudioLevelBeta
+Port=
+ID={0.0.0.00000000}.{c8daff22-9442-4afd-a15e-5ba3ab6c888b}
+Channel=
+FFTSize=2048
+FFTBufferSize=8192
+FFTAttack=
+FFTDecay=
+Bands=81
+FreqMin=
+FreqMax=
+Sensitivity=
+Type=BufferStatus
+DynamicVolume=0
+UpdatesPerSecond=-1
+OnUpdateAction=[!UpdateMeasureGroup Audio][!UpdateMeterGroup Bars][!Redraw][!UpdateMeasure lua_Ghost]
+
+[Include]
+@Include2=
+@Include3=
+@Include4=
+@Include5=ghost.inc
